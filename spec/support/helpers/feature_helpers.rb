@@ -1,6 +1,6 @@
 module FeatureHelpers
   def login!
-    FactoryGirl.create(:user, email: 'admin@mail.com', password: 'sekreto')
+    FactoryBot.create(:user, email: 'admin@mail.com', password: 'sekreto')
 
     visit blogo_admin_login_path
 

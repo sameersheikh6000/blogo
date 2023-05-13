@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'Delete Post' do
   before do
-    FactoryGirl.create(:post, title: 'Esperanto en Berlino')
+    FactoryBot.create(:post, title: 'Esperanto en Berlino')
   end
 
   it 'update post' do

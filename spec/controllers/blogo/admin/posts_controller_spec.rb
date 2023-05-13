@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Blogo::Admin::PostsController do
-  let(:user) { FactoryGirl.create(:user) }
+  let(:user) { FactoryBot.create(:user) }
   before { login_as(user) }
 
   it 'redirects if user is not logged in' do
@@ -13,7 +13,7 @@ describe Blogo::Admin::PostsController do
 
   describe '#index' do
     it 'sets @posts' do
-      posts = FactoryGirl.create_list(:post, 3)
+      posts = FactoryBot.create_list(:post, 3)
       get :index
 
       expect(response).to be_ok
@@ -76,7 +76,7 @@ describe Blogo::Admin::PostsController do
 
   describe '#edit' do
     it 'sets @post' do
-      blog_post  = FactoryGirl.create(:post)
+      blog_post  = FactoryBot.create(:post)
       get :edit, id: blog_post.permalink
 
       expect(response).to be_ok
@@ -85,7 +85,7 @@ describe Blogo::Admin::PostsController do
   end
 
   describe '#update' do
-    let(:blog_post) { FactoryGirl.create(:post, title: 'Ne lernu la anglan') }
+    let(:blog_post) { FactoryBot.create(:post, title: 'Ne lernu la anglan') }
 
     context 'params are valid' do
       it 'updates post' do
@@ -111,7 +111,7 @@ describe Blogo::Admin::PostsController do
 
   describe '#destroy' do
     it 'deletes post' do
-      blog_post = FactoryGirl.create(:post)
+      blog_post = FactoryBot.create(:post)
       delete :destroy, id: blog_post.permalink
 
       expect(response).to redirect_to blogo_admin_posts_path

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Blogo::PreviewPostService do
-  let(:user) { FactoryGirl.create(:user) }
+  let(:user) { FactoryBot.create(:user) }
   let(:params) {{
     raw_content: '<p>Content</p>',
     title: 'The Title',

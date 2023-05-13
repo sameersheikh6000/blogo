@@ -4,7 +4,7 @@ describe 'Post' do
   let(:overview) { "Should we learn Esperanto?" }
   let(:content)  { "Should we learn Esperanto? Of course yes! It's much easier than English and much more powerful!" }
   before do
-    FactoryGirl.create(:post,
+    FactoryBot.create(:post,
       permalink: 'learn-esperanto',
       html_overview: overview,
       html_content: content,

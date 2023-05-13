@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'Login' do
   before do
-    FactoryGirl.create(:user, email: 'admin@mail.com', password: 'sekreto')
+    FactoryBot.create(:user, email: 'admin@mail.com', password: 'sekreto')
   end
 
   it 'is redirected if is not logged in' do

@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe 'Recent Posts' do
   before do
-    FactoryGirl.create(:post, title: 'Ruby and Vim')
-    FactoryGirl.create(:post, title: 'Ruby with RSpec')
-    FactoryGirl.create(:post, title: 'Ruby on Rails', permalink: 'ruby-on-rails')
+    FactoryBot.create(:post, title: 'Ruby and Vim')
+    FactoryBot.create(:post, title: 'Ruby with RSpec')
+    FactoryBot.create(:post, title: 'Ruby on Rails', permalink: 'ruby-on-rails')
   end
 
   it 'shows links to recent posts' do

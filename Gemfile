@@ -9,9 +9,9 @@ end
 
 group :test do
   gem 'rspec', '~> 3.4.0'
-  gem 'rspec-rails', '~> 3.4.0'
+  gem "rspec-rails"
   gem 'shoulda'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'capybara'
 
   gem 'jquery-rails'

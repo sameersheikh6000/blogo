@@ -14,7 +14,7 @@ RSpec.describe Blogo::User do
     #it { expect(subject).to validate_uniqueness_of(:email) }
 
     it 'validates uniqueness of email' do
-      FactoryGirl.create(:user, email: 'test@mail.com')
+      FactoryBot.create(:user, email: 'test@mail.com')
       user = described_class.new(email: 'test@mail.com')
 
       user.valid?

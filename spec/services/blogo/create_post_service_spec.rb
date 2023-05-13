@@ -8,7 +8,7 @@ describe Blogo::CreatePostService do
     published: true
   }}
 
-  let(:user)    { FactoryGirl.create(:user) }
+  let(:user)    { FactoryBot.create(:user) }
   let(:service) { described_class.new(user, params) }
 
   describe '#create!' do

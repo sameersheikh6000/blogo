@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'Edit Post' do
   before do
-    FactoryGirl.create(:post, title: 'The new reality of Ukraine')
+    FactoryBot.create(:post, title: 'The new reality of Ukraine')
   end
 
   it 'update post' do

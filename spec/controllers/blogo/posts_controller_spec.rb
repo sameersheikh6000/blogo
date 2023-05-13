@@ -19,9 +19,9 @@ describe Blogo::PostsController do
     end
 
     it 'assigns @recent_posts' do
-      post1 = FactoryGirl.create(:post)
-      post2 = FactoryGirl.create(:post)
-      post3 = FactoryGirl.create(:post)
+      post1 = FactoryBot.create(:post)
+      post2 = FactoryBot.create(:post)
+      post3 = FactoryBot.create(:post)
       allow(Blogo.config).to receive(:recent_posts).and_return(2)
 
       get :index
@@ -29,8 +29,8 @@ describe Blogo::PostsController do
     end
 
     it 'assigns @tags' do
-      tag1 = FactoryGirl.create(:tag, name: 'unu')
-      tag2 = FactoryGirl.create(:tag, name: 'du')
+      tag1 = FactoryBot.create(:tag, name: 'unu')
+      tag2 = FactoryBot.create(:tag, name: 'du')
 
       get :index
       expect(assigns(:tags)).to match_array([tag1, tag2])
@@ -52,7 +52,7 @@ describe Blogo::PostsController do
 
   describe '#show' do
     before do
-      @post = FactoryGirl.create(:post)
+      @post = FactoryBot.create(:post)
       get :show, permalink: @post.permalink
     end
 
@@ -78,8 +78,8 @@ describe Blogo::PostsController do
 
   describe '#feed' do
     it 'renders atom feed' do
-      FactoryGirl.create(:post, title: 'How do you do?')
-      FactoryGirl.create(:post, title: 'Sleeping in hijacked car')
+      FactoryBot.create(:post, title: 'How do you do?')
+      FactoryBot.create(:post, title: 'Sleeping in hijacked car')
 
       get  :feed, format: 'atom'
 

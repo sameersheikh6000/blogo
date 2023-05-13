@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :post, class: Blogo::Post do
     title "How to speak Esperanto"
     sequence(:permalink) { |n| "how-to-speak-esperanto-#{n}" }

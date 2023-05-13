@@ -3,8 +3,8 @@ require 'spec_helper'
 describe Blogo::DestroyPostService do
   describe '#destroy!' do
     it 'deletes post and remaining tags' do
-      post1 = FactoryGirl.create(:post, tags: %w(ruby music rock))
-      post2 = FactoryGirl.create(:post, tags: %w(esperanto music))
+      post1 = FactoryBot.create(:post, tags: %w(ruby music rock))
+      post2 = FactoryBot.create(:post, tags: %w(esperanto music))
 
       described_class.new(post1).destroy!
 

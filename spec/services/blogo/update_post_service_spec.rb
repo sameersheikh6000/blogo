@@ -7,7 +7,7 @@ describe Blogo::UpdatePostService do
     raw_content: 'New content'
   }}
 
-  let(:post)    { FactoryGirl.create(:post, tags: tags) }
+  let(:post)    { FactoryBot.create(:post, tags: tags) }
   let(:service) { described_class.new(post, params) }
   let(:tags)    { [] }
 
@@ -50,7 +50,7 @@ describe Blogo::UpdatePostService do
 
 
       it 'does not removes tag completely if there other posts refer it' do
-        FactoryGirl.create(:post, tags: %w(music))
+        FactoryBot.create(:post, tags: %w(music))
         expect(service.update!).to be true
         expect(Blogo::Tag.all.map(&:name)).
           to match_array(%w(ruby esperanto music))

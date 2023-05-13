@@ -10,7 +10,7 @@ describe Blogo::Admin::SessionsController do
 
   describe '#create' do
     before do
-      FactoryGirl.create(:user, email: 'user@mail.com', password: 'secret13', id: 1230)
+      FactoryBot.create(:user, email: 'user@mail.com', password: 'secret13', id: 1230)
     end
 
     context 'password matches' do

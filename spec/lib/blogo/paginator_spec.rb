@@ -3,7 +3,7 @@ require 'spec_helper'
 RSpec.describe Blogo::Paginator do
   describe '#items' do
     it 'returns items of passed page' do
-      FactoryGirl.create_list(:post, 10)
+      FactoryBot.create_list(:post, 10)
       paginator = described_class.new(Blogo::Post.all, page: 3, per_page: 2)
       expect(paginator.items).to eq Blogo::Post.all[4..5]
     end
@@ -11,7 +11,7 @@ RSpec.describe Blogo::Paginator do
 
   describe '#pages' do
     it 'returns array of page numbers (per_page => 1)' do
-      FactoryGirl.create_list(:post, 10)
+      FactoryBot.create_list(:post, 10)
 
       data = [
         # page, per_page, size,  expected pages
@@ -35,7 +35,7 @@ RSpec.describe Blogo::Paginator do
 
   describe '#prev_page' do
     it 'returns nil if paginator includes first page' do
-      FactoryGirl.create_list(:post, 10)
+      FactoryBot.create_list(:post, 10)
       # << 1, 2, 3, 4, 5 >>
       paginator = described_class.new(Blogo::Post.all, per_page: 1, page: 3, size: 5)
 
@@ -44,7 +44,7 @@ RSpec.describe Blogo::Paginator do
     end
 
     it 'returns page be first shown' do
-      FactoryGirl.create_list(:post, 10)
+      FactoryBot.create_list(:post, 10)
       paginator = described_class.new(Blogo::Post.all, per_page: 1, page: 5, size: 3)
 
       expect(paginator.pages.first).to eq 4
@@ -54,7 +54,7 @@ RSpec.describe Blogo::Paginator do
 
   describe '#next_page' do
     it 'returns nil if the last page shown' do
-      FactoryGirl.create_list(:post, 10)
+      FactoryBot.create_list(:post, 10)
       # << 6, 7, 8, 9, 10 >>
       paginator = described_class.new(Blogo::Post.all, per_page: 1, page: 8, size: 5)
 
@@ -63,7 +63,7 @@ RSpec.describe Blogo::Paginator do
     end
 
     it 'returns next not shown page' do
-      FactoryGirl.create_list(:post, 10)
+      FactoryBot.create_list(:post, 10)
       # << 5, 6, 7, 8, 9 >>
       paginator = described_class.new(Blogo::Post.all, per_page: 1, page: 7, size: 5)
 

@@ -4,10 +4,10 @@ describe 'Pagination' do
   before do
     allow(Blogo.config).to receive(:posts_per_page).and_return(2)
 
-    FactoryGirl.create(:post, title: 'Ruby and Vim'          , tags: %w(ruby vim))
-    FactoryGirl.create(:post, title: 'Ruby with RSpec'       , tags: %w(ruby rspec))
-    FactoryGirl.create(:post, title: 'Ruby on Rails         ', tags: %w(ruby rails))
-    FactoryGirl.create(:post, title: 'How to grow up kittens', tags: %w(cats))
+    FactoryBot.create(:post, title: 'Ruby and Vim'          , tags: %w(ruby vim))
+    FactoryBot.create(:post, title: 'Ruby with RSpec'       , tags: %w(ruby rspec))
+    FactoryBot.create(:post, title: 'Ruby on Rails         ', tags: %w(ruby rails))
+    FactoryBot.create(:post, title: 'How to grow up kittens', tags: %w(cats))
   end
 
   it 'shows pages' do
